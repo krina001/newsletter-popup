@@ -1,0 +1,383 @@
+/*--------------------- newsletter model CSS ------------------------*/
+#newsletterModal .modal-header .close::before,
+#newsletterModal .modal-header .close::after{
+   content: "";
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2;
+  transform-origin: 50% 50%;
+  background-color:var(--color-product-secondary-text);
+  opacity: 1;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  visibility: visible;
+  -moz-transition: -moz-transform ease 0.25s;
+  -webkit-transition: -webkit-transform ease 0.25s;
+  -o-transition: -o-transform ease 0.25s;
+  -ms-transition: -ms-transform ease 0.25s;
+  transition: transform ease 0.25s;
+}
+#newsletterModal .modal-header .close::before,
+#newsletterModal .modal-header .close:hover::after{
+   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#newsletterModal .modal-header .close:hover::before,
+#newsletterModal .modal-header .close::after{
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#newsletterModal .modal-header .close {
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  transition: all 400ms ease-in-out 0s;
+  -webkit-transition: all 400ms ease-in-out 0s;
+  -moz-transition: all 400ms ease-in-out 0s;
+  -o-transition: all 400ms ease-in-out 0s;
+  -ms-transition: all 400ms ease-in-out 0s;
+  opacity: 1;
+}
+.modal-dialog {
+  margin: 0;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  -o-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+}
+#newsletterModal .modal-dialog.white-modal .modal-content {
+  border: none;
+  padding: 15px;
+  float: left;
+  width: 100%;
+  background-color: var(--color-body);
+}
+.modal-md {
+  margin: 0 auto;
+}
+.modalpopupclose {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  cursor: url(pop.png), pointer;
+}
+#newsletterModal .modal-dialog .modal-content .modal-block .desc {
+  float: left;
+  width: 100%;
+  font: 500 14px/20px var(--font-stack-body);
+  color: var(--color-body-text);
+  margin: 0 0 30px;
+}
+#newsletterModal .modal-dialog .modal-content .modal-block .title {
+  float: left;
+  width: 100%;
+  font: 600 22px/24px var(--font-stack-header);
+  color: var(--color-text);
+  margin: 0 0 10px;
+  position: relative;
+}
+#newsletterModal .modal-dialog .modal-content .modal-block .subtitle {
+  font: 400 18px/24px var(--font-stack-body);
+  color: var(--color-btn-secondary);
+  margin: 0 0 30px;
+}
+.modal-newsletter .checkbox-group {
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  float: none;
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 30px;
+}
+.modal-newsletter .checkbox-group input[type="checkbox"] + label {
+  font-size: 13px;
+  color: #777;
+}
+.modal-newsletter .checkbox-group input[type="checkbox"] + label:hover,
+.modal .modal-newsletter .checkbox-group input[type="checkbox"] + label:focus,
+.modal .modal-newsletter .checkbox-group input[type="checkbox"] + label:active {
+  color: #222;
+}
+.modal-newsletter .checkbox-group.active input[type="checkbox"] + label {
+  color: #222;
+}
+.modal-newsletter .checkbox-group.form-group-top input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+  float: none;
+  vertical-align: top;
+  display: inline-block;
+  margin: 0px;
+}
+.modal-newsletter p {
+  padding-bottom: 7px;
+}
+#newsletterModal .modal-header {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  z-index: 1;
+  padding: 0;
+  min-height: auto;
+  bottom: auto;
+  left: auto;
+  background:var(--color-product-secondary);
+}
+#newsletterModal .modal-newsletter .row-subscibe {
+  margin: 0 0 20px;
+  float: left;
+  width: 100%;
+  position: relative;
+}
+#newsletterModal .modal-newsletter .row-subscibe input {
+  height: 42px;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-text);
+  background: none;
+  text-align: center;
+}
+#newsletterModal .modal-newsletter .row-subscibe button {
+  height: 42px;
+  padding: 0;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  float: left;
+  width: 100%;
+}
+#newsletterModal .modal-newsletter .row-subscibe .errors li{
+  padding: 10px;
+}
+#newsletterModal .modal-newsletter .row-subscibe .errors{
+  margin: 0 0 20px;
+}
+#newsletterModal .modal-newsletter .checkbox-group .box {
+  margin-top: 0;
+  display: none;
+  top: 2px;
+  bottom: auto;
+}
+#newsletterModal .modal-newsletter .checkbox-group label {
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 5px;
+  margin: 0;
+  color: var(--color-body-text);
+  transition: all 400ms ease-in-out 0s;
+  -webkit-transition: all 400ms ease-in-out 0s;
+  -moz-transition: all 400ms ease-in-out 0s;
+  -o-transition: all 400ms ease-in-out 0s;
+  -ms-transition: all 400ms ease-in-out 0s;
+}
+#newsletterModal .modal-newsletter .checkbox-group label:hover {
+  color: var(--color-meta);
+}
+#newsletterModal .modal-newsletter .social-sharing {
+  float: left;
+  width: 100%;
+}
+#newsletterModal .modal-newsletter p {
+  padding: 8px;
+}
+#newsletterModal .modal-newsletter .news-social .social-sharing a:hover i,
+#newsletterModal .modal-newsletter .news-social .social-sharing a:hover span {
+  color: var(--color-btn-secondary);
+  transition: all 400ms ease-in-out 0s;
+  -webkit-transition: all 400ms ease-in-out 0s;
+  -moz-transition: all 400ms ease-in-out 0s;
+  -o-transition: all 400ms ease-in-out 0s;
+  -ms-transition: all 400ms ease-in-out 0s;
+}
+#newsletterModal .modal-content .modal-block .modal-img {
+  order: 2;
+}
+#newsletterModal .modal-newsletter {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 40px 40px 30px;
+}
+#newsletterModal form.subscribe-form {
+  width: auto;
+  float: none;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  margin: 0px;
+}
+#newsletterModal .modal-dialog.white-modal {
+  background-color: var(--color-body);
+  width: 580px;
+}
+#newsletterModal .modal-dialog.white-modal.modal-md {
+  margin: 0 auto;
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+  height: auto;
+  overflow: hidden;
+  z-index: 2;
+}
+#newsletterModal .modal-newsletter .news-social .social-sharing a {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-stack-header);
+  margin: 0 10px;
+  position: relative;
+  transition: all 400ms ease-in-out 0s;
+  -webkit-transition: all 400ms ease-in-out 0s;
+  -moz-transition: all 400ms ease-in-out 0s;
+  -o-transition: all 400ms ease-in-out 0s;
+  -ms-transition: all 400ms ease-in-out 0s;
+}
+#newsletterModal .modal-newsletter .news-social .social-sharing a i,
+#newsletterModal .modal-newsletter .news-social .social-sharing a span {
+  -webkit-transition: all 400ms ease-in-out 0s;
+  -moz-transition: all 400ms ease-in-out 0s;
+  -o-transition: all 400ms ease-in-out 0s;
+  -ms-transition: all 400ms ease-in-out 0s;
+  font: 500 16px/20px var(--font-stack-body);
+  cursor: pointer;
+  color: var(--color-meta);
+}
+
+#newsletterModal .modal-dialog .modal-content .modal-block .desc_2 {
+  text-align: center;
+  font: 400 15px/20px var(--font-stack-body);
+  padding: 0px 84px;
+}
+@media only screen and (max-width: 1599px) {
+  #newsletterModal .modal-newsletter .newsletter-title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .modal-header i.mdi.mdi-close {
+    font-size: 22px;
+  }
+  #newsletterModal .modal-header .close {
+    right: 5px;
+    top: 5px;
+  }
+  #newsletterModal .modal-newsletter .newsletter-title {
+    font-size: 27px;
+    line-height: 34px;
+  }
+  #newsletterModal .modal-newsletter .row-subscibe {
+    margin: 0 0 25px;
+  }
+  #newsletterModal .modal-newsletter .desc {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+@media only screen and (max-width: 1299px) {
+  #newsletterModal .modal-newsletter .newsletter-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  #newsletterModal .modal-newsletter .newsletter-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #newsletterModal .modal-newsletter {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #newsletterModal .modal-dialog.white-modal {
+  width: 480px;
+}
+  #newsletterModal .modal-newsletter .desc {
+    margin: 0 0 15px;
+  }
+  #newsletterModal .modal-newsletter {
+    padding: 40px 40px 30px;
+  }
+  #newsletterModal .modal-newsletter .newsletter-title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #newsletterModal .modal-header .close,#newsletterModal .modal-header{
+    width: 25px;
+    height: 25px;
+  }
+  #newsletterModal .modal-header .close:before, #newsletterModal .modal-header .close:after{
+        width: 15px;
+  }
+  #newsletterModal .modal-dialog.white-modal {
+    width: 300px;
+}
+  #newsletterModal .modal-dialog .modal-content .modal-block .title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #newsletterModal .modal-md {
+    padding: 10px !important ;
+  }
+#newsletterModal .modal-dialog .modal-content .modal-block .desc{
+      font-size: 13px;
+    line-height: 17px;
+      margin: 0 0 20px;
+}
+  #newsletterModal .modal-newsletter .row-subscibe {
+    margin: 0 0 15px;
+  }
+  #newsletterModal .modal-newsletter {
+    padding: 20px;
+  }
+  #newsletterModal .modal-newsletter .row-subscibe input {
+    height: 38px;
+  }
+  #newsletterModal .modal-newsletter .row-subscibe button {
+    height: 38px;
+  }
+  #newsletterModal
+    .modal-newsletter
+    .news-social
+    .social-sharing
+    a
+    span.share-title {
+    display: none;
+  }
+  .modal-newsletter .checkbox-group {
+    margin-bottom: 20px;
+  }
+}
