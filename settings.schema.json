@@ -1,0 +1,61 @@
+  {
+    "name": "Newsletter Popup",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "popup_newsletter_show",
+        "label": "Show Popup Newsletter",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "popup_newsletter_img",
+        "label": "Display Newsletter Popup Image",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "popup_newsletter_form",
+        "label": "Display Newsletter Popup Form",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "newsletter-bg.png",
+        "label": "Newsletter Image",
+        "info": "Image must be PNG"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_title",
+        "label": "Newsletter"
+      },
+      {
+        "type": "text",
+        "id": "popup_newsletter_description",
+        "label": "Description"
+      },
+      {
+        "type": "header",
+        "content": "Time Settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "After close popup next show will be after 1 minute. If set \"DON'T SHOW THIS POPUP AGAIN\" next show will be after 7 days."
+      },
+      {
+        "type": "text",
+        "id": "popup_newsletter_delay_first",
+        "label": "Delay before current show",
+        "info": "Time in milliseconds. Integer",
+        "default": "2000"
+      },
+      {
+        "type": "text",
+        "id": "popup_newsletter_delay",
+        "label": "Delay before next show",
+        "info": "Time in minutes. Integer",
+        "default": "1"
+      }
+    ]
+  },
