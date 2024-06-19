@@ -1,0 +1,114 @@
+{% if settings.popup_newsletter_show %}
+  {{ 'newsletter-popup.css' | asset_url | stylesheet_tag }}
+
+  <div class="modal" tabindex="-1" id="newsletterModal" data-pause="{{ settings.popup_newsletter_delay_first }}">
+    <div class="modal-dialog white-modal center-center">
+      <div class="modal-content modal-md">
+        <div class="modal-header position-absolute">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-block align-items-md-center float-start w-100">
+          {% if settings.popup_newsletter_img != blank %}
+            <div class="modal-img">
+              <img
+                src="{{ 'newsletter-bg.png' | asset_img_url:'547x320' }}"
+                alt="newsletter-bg"
+                class="img-responsive"
+                loading="lazy"
+                width="547"
+                height="320"
+              >
+            </div>
+          {% endif %}
+          {% if settings.popup_newsletter_form != blank %}
+            <div class="modal-newsletter">
+              <h1 class="title float-start w-100">{{ settings.newsletter_title }}</h1>
+              <div class="desc float-start w-100">{{ settings.popup_newsletter_description }}</div>
+              {% form 'customer' %}
+                {% if form.posted_successfully? %}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="newsletter-input row-subscibe float-start w-100 position-relative">
+                    <input
+                      type="email"
+                      value="{% if customer %}{{ customer.email }}{% endif %}"
+                      placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}"
+                      name="contact[email]"
+                      id="Email"
+                      class="input-group-field"
+                      aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}"
+                      autocapitalize="off"
+                    >
+
+                    <p class="note form-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+                    <span class="input-group-btns">
+                      <button
+                        type="submit"
+                        class="btn icon-fallback-text"
+                        name="commit"
+                        id="subscribe"
+                        aria-label="Name"
+                      >
+                        <span class="subscribe">{{ 'general.newsletter_form.submit' | t }}</span>
+                      </button>
+                    </span>
+                  </div>
+                {% else %}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="newsletter-input row-subscibe float-start w-100 position-relative">
+                    <input
+                      type="email"
+                      value="{% if customer %}{{ customer.email }}{% endif %}"
+                      placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}"
+                      name="contact[email]"
+                      id="Email"
+                      class="input-group-field"
+                      aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}"
+                      autocapitalize="off"
+                    >
+
+                    {{ form.errors | default_errors }}
+                    <span class="input-group-btns">
+                      <button
+                        type="submit"
+                        class="btn icon-fallback-text"
+                        name="commit"
+                        id="subscribe"
+                        aria-label="Name"
+                      >
+                        <span class="subscribe">{{ 'general.newsletter_form.submit' | t }}</span>
+                      </button>
+                    </span>
+                  </div>
+                {% endif %}
+              {% endform %}
+              <div class="checkbox-group form-group-top clearfix float-start w-100">
+                <input type="checkbox" id="checkBox">
+                <label for="checkBox">
+                  <span class="check"></span>
+                  <span class="box"></span>
+                  {{ 'newsletter.popup_newsletter.question' | t }}
+                </label>
+              </div>
+              <div class="news-social">
+                {% render 'social-sharing' %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(e){var obj={init:function(){try
+    {if(e.cookie('popupNewsletter')!='disable'){this.checkboxEvent();var pause=e('#newsletterModal').attr('data-pause');setTimeout(function(){e('#newsletterModal').modal('show');var date=new Date();var minutes={{settings.popup_newsletter_delay}};date.setTime(date.getTime()+(minutes*60*800));e.cookie('popupNewsletter','disable',{expires:date,path:'/'})},pause)}}
+                                                  catch(err){}},checkboxEvent:function(){e('#checkBox').change(function(){if(e(this).is(':checked')){e(this).addClass('active');e(this).parent().addClass('active');e.cookie('popupNewsletter','disable',{expires:1,path:'/'})}else{e(this).removeClass('active');e(this).parent().removeClass('active');e.cookie("popupNewsletter",null,{path:'/'})}})}};e(document).ready(function(){obj.init()})})(jQuery)
+        $(document).ready(function(){
+                $("#newsletterModal .modal-header .close").click(function(){
+                $("#newsletterModal").css("display" , "none");
+                $(".modal-backdrop").css("display" , "none");
+                $("body").removeClass("modal-open");
+                });
+            });
+  </script>
+{% endif %}
